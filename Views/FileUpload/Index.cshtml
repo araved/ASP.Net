@@ -1,0 +1,27 @@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center>
+    <h1>Upload file page:</h1>
+    <br />
+    <hr />
+    <p>Please enter file:</p>
+    <form method="post" enctype="multipart/form-data"
+          asp-controller="UploadFiles" asp-action="Index">
+        <input type="file" name="files" multiple />
+        <br />
+        <input type="submit" name="Upload" value="Upload files now!" />
+
+    </form>
+
+</center>
+
+@if (TempData["message"] != null)
+{
+    <script>
+        alert("@TempData["message"]");
+    </script>
+}
+
